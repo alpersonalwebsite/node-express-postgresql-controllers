@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import Sequelize from 'sequelize'
 
+import Application from '../resources/applications/model'
 import User from '../resources/users/model'
 
 dotenv.config({ path: `./src/config/${process.env.ENVIRONMENT}.env` })
@@ -22,5 +23,6 @@ db.Sequelize = Sequelize
 db.sequelize = sequelize
 
 db.users = User(sequelize, Sequelize)
+db.applications = Application(sequelize, Sequelize)
 
 export default db

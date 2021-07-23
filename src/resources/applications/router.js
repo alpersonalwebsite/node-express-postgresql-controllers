@@ -4,7 +4,7 @@ import controllers from './controllers'
 
 const router = Router()
 
-// equals to /api/users
+// equals to /api/applications
 router.route('/').get(controllers.getSomeOrAll)
 
 export default router

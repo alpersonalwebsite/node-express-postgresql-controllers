@@ -8,16 +8,17 @@ module.exports = {
   parser: 'babel-eslint',
   env: {
     node: true,
-    es6: true
+    es6: true,
+    jasmine: true
   },
   extends: [
     'eslint:recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:jest/recommended',
+    'plugin:jasmine/recommended',
     'prettier'
   ],
-  plugins: ['prettier', 'jest', 'simple-import-sort'],
+  plugins: ['prettier', 'jasmine', 'simple-import-sort'],
   rules: {
     'prettier/prettier': ['error', prettierConfig],
     'simple-import-sort/imports': 'error',
