@@ -1,5 +1,5 @@
 {
-  "name": "node-express-postgresql",
+  "name": "node-express-postgresql-controllers",
   "version": "1.0.0",
   "description": "Simple example of how to integrate PostgreSQL with Node",
   "keywords": [
