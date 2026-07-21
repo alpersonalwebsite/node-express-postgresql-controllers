@@ -1,6 +1,6 @@
 import { toNumber } from '../../utils/helpers'
 
-describe('Test toNumber(input)', () => {
+describe('Test toNumber(input, fallback)', () => {
   it('returns a number if we pass a number', () => {
     const resultStr = toNumber(1)
 
@@ -13,21 +13,27 @@ describe('Test toNumber(input)', () => {
     expect(resultStr).toBe(1)
   })
 
-  it('returns an empty string if we pass an object', () => {
+  it('returns the fallback (default 0) if we pass an object', () => {
     const resultStr = toNumber({})
 
-    expect(resultStr).toBe('')
+    expect(resultStr).toBe(0)
   })
 
-  it('returns an empty string if we pass a boolean', () => {
+  it('returns the fallback (default 0) if we pass a boolean', () => {
     const resultStr = toNumber(false)
 
-    expect(resultStr).toBe('')
+    expect(resultStr).toBe(0)
   })
 
-  it('returns an empty string if we pass a string', () => {
+  it('returns the fallback (default 0) if we pass a non-numeric string', () => {
     const resultStr = toNumber('abc')
 
-    expect(resultStr).toBe('')
+    expect(resultStr).toBe(0)
+  })
+
+  it('returns the provided fallback for invalid input', () => {
+    const resultStr = toNumber('abc', 40)
+
+    expect(resultStr).toBe(40)
   })
 })

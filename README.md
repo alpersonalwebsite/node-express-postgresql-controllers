@@ -4,7 +4,7 @@
 
 This is an easy, basic and raw example of **HOW to** implement an API with Node, Express and PostgreSQL (with Sequelize ORM) **with generic controllers**.
 
-This project is based on the template `node-express-postgresql`. Check out the repo [README](../node-express-postgresql/README.md) for setup and development.
+This project is based on the template [`node-express-postgresql`](https://github.com/alpersonalwebsite/node-express-postgresql). Check out that repo's README for setup and development.
 
 ---
 
@@ -12,11 +12,13 @@ This project is based on the template `node-express-postgresql`. Check out the r
 
 ### Using the Generic Controllers
 
-We are going to use our `generic controllers` to perform common `CRUD operations`, giving a model:
+The idea of `generic controllers` is to perform common `CRUD operations` for any model:
 * Create a document in a collection (POST)
 * Retrieve all the documents in a collection or one document by its ID (GET)
 * Update a document in a collection by its ID (PUT)
 * Delete a document in a collection by its ID (DELETE)
+
+**This template ships only the read controller** — `getSomeOrAll`, wired to `GET /api/users` and `GET /api/applications`. The `createOne` / `getOne` / `updateOne` / `deleteOne` examples below show how you would extend the pattern; you'd implement those controllers in `/src/utils/crud.js` first.
 
 If you need to create a custom controller for a particular resource, add it to `/src/resources/collection/controllers.js` and update the router with the route and the exported method (controller) `/src/resources/collection/router.js`
 
